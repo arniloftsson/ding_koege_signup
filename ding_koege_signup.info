@@ -1,0 +1,5 @@
+name = Ding Koege Signup
+description = Allow users to signup to Marketing Platform news letter.
+core = 7.x
+package = Ding!
+

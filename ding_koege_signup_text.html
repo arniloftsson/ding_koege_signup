@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport"
+			content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
+</head>
+<body>
+<!--
+Do not modify the NAME value of any of the INPUT fields
+the FORM action, or any of the hidden fields (eg. input type=hidden).
+These are all required for this form to function correctly.
+-->
+<script type="text/javascript">
+function CheckMultiple6722(frm, name) {
+				for (var i=0; i < frm.length; i++)
+				{
+					fldObj = frm.elements[i];
+					fldId = fldObj.id;
+					if (fldId) {
+						var fieldnamecheck=fldObj.id.indexOf(name);
+						if (fieldnamecheck != -1) {
+							if (fldObj.checked) {
+								return true;
+							}
+						}
+					}
+				}
+				return false;
+			}
+
+		function CheckForm6722(f) {
+			var email_re = /[a-z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/i;
+				if (!email_re.test(f.email.value)) {
+					alert("Venligst indtaste din e-mail-adresse.:");
+					f.email.focus();
+					return false;
+				}
+
+					lists_chosen = CheckMultiple6722(f, "lists");
+					if (!lists_chosen) {
+						alert("Please choose some List(s) to subscribe to");
+						return false;
+					}
+
+					lists_chosen = CheckMultiple6722(f, "lists");
+					if (!lists_chosen) {
+						alert("Please choose some List(s) to subscribe to");
+						return false;
+					}
+
+				return true;
+			}
+</script>
+<script>
+    window.addEventListener('DOMContentLoaded', function() {
+      const checkbox1 = document.getElementById('CustomFields[263169_6722]_Voksne');
+      const checkbox2 = document.getElementById('CustomFields[263169_6722]_Boernefamilier');
+      const checkbox3 = document.getElementById('lists_112873');
+      const checkbox4 = document.getElementById('lists_112872');
+
+      checkbox1.addEventListener('change', function() {
+        checkbox3.checked = checkbox1.checked;
+      });
+
+      checkbox2.addEventListener('change', function() {
+        checkbox4.checked = checkbox2.checked;
+      });
+    });
+  </script>
+<style type="text/css">
+.myForm td, input, select, textarea, checkbox {
+	font-family: FaktPro-Normal,sans-serif;
+	font-size: 16px;
+}
+
+.required {
+	color: red;
+}
+
+input.fb {
+	background-image: url('https://app.marketingplatform.com/public/images/facebookautofill.jpg');
+	width: 179px;
+	height: 37px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.myForm {
+	width:100%;
+	background-color: #e5e5e5;
+	color: #464646;
+	display: block;
+	padding:20px!important;
+}
+
+.mptext1 {
+	display: block;
+	font-size:18px;
+	font-weight: bold;
+}
+
+.mptext2 {
+	font-size:14px;
+}
+
+.mptext3 {
+	font-size:14px;
+	display:inline-block;
+}
+
+.padbot20 {
+	padding-bottom:20px;
+
+}
+
+.padtop20 {
+	padding-top:20px;
+
+}
+
+.padbot30 {
+	padding-bottom:30px;
+
+}
+
+.padtop30 {
+	padding-top:30px;
+}
+
+
+
+table {
+	width:100%;
+}
+
+table tr {
+	width:100%;
+}
+
+table tr td {
+	display: block;
+	width:100%;
+	padding:0;
+}
+
+.inlineblock {
+	display:inline-block;
+}
+
+.padbot10 {
+	padding-bottom:10px;
+}
+
+.padtop10 {
+	padding-top:10px;
+}
+
+table td:first-child {
+	padding: 0;
+}
+
+input[type=text] {
+	border:none;
+	border-bottom:1px solid black;
+	outline:none;
+	background-color: #e5e5e5;
+	font-size:14px;
+	width:40%;
+	height:auto;
+	padding:0;
+	border-radius:0;
+}
+
+input[type=text]:focus {
+	box-shadow:none;
+}
+
+input[type=submit] {
+	display: inline-block;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 42px;
+	font-family: FaktPro-Normal,sans-serif;
+	width: auto;
+	white-space: nowrap;
+	height: 42px;
+	margin: 0!important;
+	padding: 0 22px;
+	text-decoration: none;
+	text-align: center;
+	cursor: pointer;
+	border: 0;
+	border-radius: 3px;
+	background-color: #5d5d5d;
+	color: #ffffff !important;
+}
+
+input[type=submit]:hover {
+	background-color:#484848!important;
+}
+
+/* The container */
+.container {
+	position: relative;
+	padding-left: 28px;
+	padding-top: 3px;
+	cursor: pointer;
+	font-size: 14px;
+	line-height: 16px !important;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	height: 20px;
+	width: 20px;
+	background-color: #fff;
+	border-radius: 16%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+	background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+	background-color: #5f5f5f;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+	display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+	left: 6px;
+	top: 2px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+</style>
+<div>
+<table border="0" cellpadding="2" class="myForm">
+<tbody>
+<tr>
+<td><form method="post" action="https://app.marketingplatform.com/ExtAccess/Form?form=6722" id="frmSS6722" onsubmit="return CheckForm6722(this);">
+<table>
+<tbody>
+	<tr>
+	<td>
+	<span class="mptext1">Få nyt om bøger og arrangementer</span><br>
+	<span class="mptext2">Vil du have inspiration til gode læseoplevelser og tips til arrangementer på biblioteket?
+		<br>
+	<span class="mptext2 padtop20 inlineblock">Så tilmeld dig vores nyhedsbreve.</span>
+</span>
+	</td>
+</tr>
+<tr class="padbot30 padtop30 inlineblock">
+<td><span class="required">*</span><span class="mptext3">Email:</span><input type="text" name="email" style="margin-left:10px; vertical-align: middle;">
+	</td></tr>
+<tr>
+	<td>
+		<span class="mptext2 padbot30 inlineblock" style="line-height:120%; font-style: italic;">KøgeBibliotekerne bruger kun din mailadresse til at holde dig orienteret om aktiviteter, anbefalinger og andre relevante nyheder via KøgeBibliotekernes nyhedsbrev.<br>
+Din mailadresse registreres i en database, som administreres af vores databehandler Marketing Platform - Link Mobility, der står for udsendelsen af nyhedsbrevet. Din mailadresse bliver ikke brugt til andre formål og bliver ikke videregivet til andre.
+</span>
+	</td>
+</tr>
+<tr style="display:none;">
+<td>Lists:</td></tr>
+<tr style="display:none;">
+<td><label for="lists_112872"><input type="checkbox" id="lists_112872" name="lists[]" value="112872" />&nbsp;Boernefamilier</label></td>
+</tr>
+<tr style="display:none;">
+<td><label for="lists_112873"><input type="checkbox" id="lists_112873" name="lists[]" value="112873" />&nbsp;Voksne</label></td>
+</tr>
+<tr style="display:none;">
+<td>voksne/Boernefamilier:</td></tr>
+<tr>
+<td>
+	<label class="container inlineblock" for="CustomFields[263169_6722]_Voksne">
+		<span class="mptext2 inlineblock" style="padding-top:10px;">Ja, jeg ønsker at modtage nyhedsbrevet for voksne</span>
+		<input type="checkbox" id="CustomFields[263169_6722]_Voksne" name="CustomFields[263169][]" value="Voksne">
+		<span class="checkmark"></span></label>
+		<br>
+	<label class="container inlineblock" for="CustomFields[263169_6722]_Boernefamilier">
+		<span class="mptext2 padtop10 inlineblock">Ja, jeg ønsker at modtage nyhedsbrevet for børnefamilier</span>
+		<input type="checkbox" id="CustomFields[263169_6722]_Boernefamilier" name="CustomFields[263169][]" value="Boernefamilier" /><span class="checkmark"></span></label></td>
+</tr>
+<tr style="display: none;">
+<td>&nbsp;&nbsp;&nbsp;&nbsp;First Name:</td>
+<td><input type="text" class="form-control" name="first_name_mp" id="first_name_mp" /></td>
+</tr>
+<tr>
+	<td>
+<span class="mptext2 padbot30 padtop30 inlineblock">Vi skriver til dig cirka en gang om måneden. Vi ses i din indbakke!</span><br>
+<span class="mptext2 padbot20 inlineblock" style="line-height:120%;"><strong>Afmelding</strong><br>
+Du kan til hver en tid opsige dit abonnement på nyhedsbrevene ved at trykke på opsigelseslinket i bunden af de mails, du modtager fra os. Du kan også opsige dit abonnement ved at skrive til webbib@koege.dk
+</span><br>
+<span class="padbot30 inlineblock"><a href="http://www.koegebib.dk/personoplysninger">Læs mere om vores behandling af personoplysninger her.</a></span>
+	</td>
+</tr>
+<tr>
+<td><input type="submit" value="Tilmeld"></td>
+</tr>
+</tbody>
+</table>
+</form></td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

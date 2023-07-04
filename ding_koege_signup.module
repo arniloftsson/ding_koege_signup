@@ -1,0 +1,61 @@
+<?php
+/**
+ * @file
+ * Handle user self signup to news letter.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function ding_koege_signup_menu() {
+  $items = array();
+
+  $items['admin/config/ding/koegesignup'] = array(
+    'title' => 'Signup',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('ding_koege_signup_admin_settings_form'),
+    'access arguments' => array('administer users'),
+    'file' => 'includes/ding_koege_signup.admin.inc',
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  $items['nyhedsbrev/tilmelding'] = array(
+    'page callback' => 'ding_koege_signup_information',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function ding_koege_signup_theme($existing, $type, $theme, $path) {
+  return array(
+    'ding_koege_signup' => array(
+      'template' => 'ding-koege-signup',
+      'variables' => array(
+        'content' => array(),
+        'image' => array(),
+      ),
+      'path' => $path . '/templates',
+    ),
+  );
+}
+
+/**
+ * Generate render array for the information page.
+ *
+ * @return array
+ *   Render array with the page content.
+ */
+function ding_koege_signup_information() {
+  $info_text = file_get_contents(drupal_get_path('module', 'ding_koege_signup') . '/ding_koege_signup_text.html');
+
+  return array(
+    '#theme' => 'ding_koege_signup',
+    '#content' => $info_text,
+  );
+}
