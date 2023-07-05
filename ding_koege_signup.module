@@ -11,7 +11,7 @@ function ding_koege_signup_menu() {
   $items = array();
 
   $items['admin/config/ding/koegesignup'] = array(
-    'title' => 'Signup',
+    'title' => 'Nyhedsbrev Signup',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('ding_koege_signup_admin_settings_form'),
     'access arguments' => array('administer users'),
@@ -46,7 +46,7 @@ function ding_koege_signup_theme($existing, $type, $theme, $path) {
 }
 
 /**
- * Generate render array for the information page.
+ * Generate render array for the singup page.
  *
  * @return array
  *   Render array with the page content.
@@ -56,6 +56,6 @@ function ding_koege_signup_information() {
 
   return array(
     '#theme' => 'ding_koege_signup',
-    '#content' => $info_text,
+    '#content' => variable_get('ding_koege_signup_content', $info_text),
   );
 }
